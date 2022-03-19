@@ -81,6 +81,10 @@ function run_elementor_vpelements_core() {
 }
 run_elementor_vpelements_core();
 
+/**
+ * Adds a link to settings page and to our website under the plugins details
+ */
+
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'settings_link');
 
 function settings_link( $links ){
@@ -92,3 +96,37 @@ function settings_link( $links ){
 	// array_push( $links, $settings_link );
 	return $links;
 }
+
+/**
+ * Create an Elementor Widget Category to host our Widgets
+ */
+
+function add_elementor_widget_categories( $elements_manager ) {
+
+	$elements_manager->add_category(
+		'vpElements',
+		[
+			'title' => esc_html__( 'VPElements', 'elementor-vpelements' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+}
+
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
+
+/** 
+ * Initialize the plugin directory
+*/
+
+function runplugin() {
+
+	// Load plugin file
+	require_once( __DIR__ . '/includes/plugin.php' );
+
+	// Run the plugin
+	\Elementor_VPElements\Plugin::instance();
+
+}
+
+add_action( 'plugins_loaded', 'runplugin' );
+

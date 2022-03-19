@@ -9,7 +9,7 @@
 
 [![Status](https://img.shields.io/badge/status-development-blue?style=for-the-badge)](https://github.com/spyx3m119/elementor-vpelements-core)
 [![GitHub Issues](https://img.shields.io/github/issues/spyx3m119/elementor-vpelements-core?style=for-the-badge)](https://github.com/spyx3m119/elementor-vpelements-core/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/stars/spyx3m119/elementor-vpelements-core?style=for-the-badge)](https://github.com/spyx3m119/elementor-vpelements-core/pulls)
+[![GitHub Pull Requests](https://img.shields.io/github/pulls/spyx3m119/elementor-vpelements-core?style=for-the-badge)](https://github.com/spyx3m119/elementor-vpelements-core/pulls)
 [![License](https://img.shields.io/github/license/spyx3m119/elementor-vpelements-core?style=for-the-badge)](https://github.com/spyx3m119/elementor-vpelements-core/blob/main/LICENSE.txt)
 
 </div>

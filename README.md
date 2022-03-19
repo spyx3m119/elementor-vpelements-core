@@ -8,9 +8,9 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-development-blue)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/spyx3m119/elementor-vpelements-core/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/pull%20request-1-brightgreen)](https://github.com/spyx3m119/elementor-vpelements-core/pulls)
+[![License](https://img.shields.io/badge/licence-GPL-yellowgreen)](/LICENSE)
 
 </div>
 

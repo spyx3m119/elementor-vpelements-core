@@ -49,7 +49,7 @@
     <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Global</button>
     <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Integration</button>
   </div>
-  <div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-content px-5" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 		<div class="container">
 			<div class="row ">
@@ -113,7 +113,59 @@
 			</div>
 		</div>
 	</div>
-    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Widgets</div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+		<div class="container"><h3 class="pb-5"> Available Widgets</h3></div>
+		<div class="container">
+			<div class="row gx-5 mb-3">
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements Multi Header
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">New</span>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements Icon List
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">Dev</span>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements Accordion
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">Dev</span>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements Image
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">Dev</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row gx-4 mb-3">
+			<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements Post
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">No</span>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements Post Category
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">No</span>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements XXX
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"></span>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="bg-light p-3 position-relative badge text-dark">VPElements YYY
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+	</div>
     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Global</div>
     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Inegration</div>
   </div>

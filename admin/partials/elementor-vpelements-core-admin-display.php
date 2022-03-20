@@ -18,20 +18,20 @@
       <img src="https://vladparole.digitalnomadph.com/wp-content/uploads/elementor/thumbs/VP-logo-pm1b2ecka9nn07j3vg7zse70eiaw41mnk6wyqnbh6c.png"  alt="" width="60" height="40" class="d-inline-block align-text-top">
       VPElements Plugin <small> v1.0.0 </small>
     </a>
-	<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
-  </li>
-</ul>
+	<ul class="nav nav-tabs">
+		<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="#">Active</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Link</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Link</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link disabled">Disabled</a>
+		</li>
+	</ul>
   </div>
 </nav>
 
@@ -42,42 +42,81 @@
   <hr>
   <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 </div>
-
-<div class="row">
-  <div class="col-sm-6">
-		<div class="card">
-		<div class="card-header">
-			Featured
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">General</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Widgets</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Global</button>
+    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Integration</button>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+		<div class="container">
+			<div class="row ">
+				<div class="col col-4">
+				<div class="card" style="width: 24rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+					</div>
+				</div>
+				<div class="col col-4">
+				<div class="card" style="width: 24rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+					</div>
+				</div>
+				<div class="col col-4">
+				<div class="card" style="width: 24rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title">Special title treatment</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+
+		<div class="container">
+			<div class="row ">
+				<div class="col col-8">
+				<div class="card">
+					<div class="card-header">
+						Featured
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Special title treatment</h5>
+						<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+					</div>
+				</div>
+				<div class="col col-4">
+				<div class="card">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Widgets</div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Global</div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Inegration</div>
+  </div>
 </div>
-
-<div class="row">
-  <div class="col-sm-6">
-
-	<div class="card" style="width: 18rem;">
-	<img src="https://vladparole.digitalnomadph.com/wp-content/uploads/elementor/thumbs/VP-logo-pm1b2ecka9nn07j3vg7zse70eiaw41mnk6wyqnbh6c.png" class="card-img-top" alt="...">
-	<div class="card-body">
-		<h5 class="card-title">Card title</h5>
-		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	</div>
-	<ul class="list-group list-group-flush">
-		<li class="list-group-item">An item</li>
-		<li class="list-group-item">A second item</li>
-		<li class="list-group-item">A third item</li>
-	</ul>
-	<div class="card-body">
-		<a href="#" class="card-link">Card link</a>
-		<a href="#" class="card-link">Another link</a>
-	</div>
-	</div>
-</div>
-
-
  <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 	

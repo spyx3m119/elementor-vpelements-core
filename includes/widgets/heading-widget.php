@@ -87,7 +87,7 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'heading', 'keywords', 'keyword2', 'keyword3' ];
+		return [ 'heading', 'dual heading', 'title' ];
 	}
 
 	/**
@@ -105,19 +105,38 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  		$this->start_controls_section(
  			'section_title',
  			[
- 				'label' => esc_html__( 'Title', 'elementor-vpelements' ),
+ 				'label' => esc_html__( 'Multi Color Heading', 'elementor-vpelements' ),
  				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
  			]
  		);
 
  		$this->add_control(
- 			'title',
+ 			'vptitle1',
  			[
- 				'label' => esc_html__( 'Title', 'elementor-vpelements' ),
- 				'type' => \Elementor\Controls_Manager::TEXTAREA,
- 				'default' => esc_html__( 'Hello world', 'elementor-vpelements' ),
+ 				'label' => esc_html__( 'Start Text', 'elementor-vpelements' ),
+ 				'type' => \Elementor\Controls_Manager::TEXT,
+ 				'default' => esc_html__( 'Start ', 'elementor-vpelements' ),
+				'placeholder' => esc_html__( 'Type your title here', 'elementor-vpelements' ),
  			]
  		);
+		$this->add_control(
+			'vptitle2',
+			[
+				'label' => esc_html__( 'Middle Text', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'Middle ', 'elementor-vpelements' ),
+			    'placeholder' => esc_html__( 'Type your title here', 'elementor-vpelements' ),
+			]
+		);
+		$this->add_control(
+			'vptitle3',
+			[
+				'label' => esc_html__( 'End Text', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'default' => esc_html__( 'End ', 'elementor-vpelements' ),
+			    'placeholder' => esc_html__( 'Type your title here', 'elementor-vpelements' ),
+			]
+		);
 
  		$this->end_controls_section();
 
@@ -135,15 +154,67 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  		);
 
  		$this->add_control(
- 			'title_color',
+ 			'vptitle1_color',
  			[
- 				'label' => esc_html__( 'Text Color', 'elementor-vpelements' ),
+ 				'label' => esc_html__( 'Start Text Color', 'elementor-vpelements' ),
  				'type' => \Elementor\Controls_Manager::COLOR,
- 				'selectors' => [
- 					'{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+				'selectors' => [
+ 					'{{WRAPPER}} .vptitle1' => 'color: {{VALUE}};',
  				],
  			]
- 		);
+		);
+		$this->add_control(
+			'vptitle2_color',
+			[
+				'label' => esc_html__( 'Middle Text Color', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#C0392B',
+ 				'selectors' => [
+					'{{WRAPPER}} .vptitle2' => 'color: {{VALUE}};',
+				],
+			]
+	   );
+	   $this->add_control(
+			'vptitle3_color',
+			[
+				'label' => esc_html__( 'End Text Color', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .vptitle3' => 'color: {{VALUE}};',
+				],
+			]
+   		);
+
+		$this->add_control(
+			'font_family',
+			[
+				'label' => esc_html__( 'Font Family', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::FONT,
+				'default' => "'Open Sans', sans-serif",
+				'selectors' => [
+					'{{WRAPPER}} .vptitle' => 'font-family: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'font-size',
+			[
+				'label' => esc_html__( 'Middle Text Font Size', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 300,
+						'step' => 1,
+					]					
+				],
+				'selectors' => [
+					'{{WRAPPER}} .vptitle2' => 'font-size: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
  		$this->end_controls_section();
 
@@ -155,10 +226,11 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  		$settings = $this->get_settings_for_display();
  		?>
 
- 		<h1 class="hello-world">
- 			<?php echo $settings['title']; ?>
+ 		<h1 class="vptitle"> 
+			<span class ="vptitle1"><?php echo $settings['vptitle1'] ?> </span>
+			<span class ="vptitle2"><?php echo $settings['vptitle2'] ?> </span>
+			<span class ="vptitle3"><?php echo $settings['vptitle3'] ?> </span>
  		</h1>
-
  		<?php
- 	}
+ 	}	
  }

@@ -225,6 +225,23 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'tag_select',
+			[
+				'label' => esc_html__( 'Tag Style', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'h1',
+				'options' => [
+					'h1'  => esc_html__( 'H1', 'elementor-vpelements' ),
+					'h2' => esc_html__( 'H2', 'elementor-vpelements' ),
+					'h3' => esc_html__( 'H3', 'elementor-vpelements' ),
+					'h4' => esc_html__( 'H4', 'elementor-vpelements' ),
+					'h5' => esc_html__( 'H5', 'elementor-vpelements' ),
+					'div' => esc_html__( 'DIV', 'elementor-vpelements' ),
+					'span' => esc_html__( 'SPAN', 'elementor-vpelements' ),
+				],
+			]
+		);
  		$this->end_controls_section();
 
  		// Style Tab End
@@ -235,11 +252,11 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  		$settings = $this->get_settings_for_display();
  		?>
 
- 		<h1 class="vptitle"> 
+ 		<<?php echo $settings['tag_select'];?> class="vptitle"> 
 			<span class ="vptitle1"><?php echo $settings['vptitle1'] ?> </span>
 			<span class ="vptitle2"><?php echo $settings['vptitle2'] ?> </span>
 			<span class ="vptitle3"><?php echo $settings['vptitle3'] ?> </span>
- 		</h1>
+ 		</<?php echo $settings['tag_select'];?>>
  		<?php
  	}	
  }

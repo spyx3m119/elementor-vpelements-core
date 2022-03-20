@@ -37,8 +37,13 @@
 Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
+=== Installation ===
+1. In your admin panel, go to Appearance > Themes and click the 'Add New' button.
+2. Click 'Upload plugin' and upload the zipped file
+3. Click on the 'Activate' button to use your new theme right away.
+4. Navigate to Elementor and start building your site.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 

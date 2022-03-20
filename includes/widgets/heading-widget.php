@@ -146,85 +146,6 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);
-
- 		$this->end_controls_section();
-
- 		// Content Tab End
-
-
- 		// Style Tab Start
-
- 		$this->start_controls_section(
- 			'section_title_style',
- 			[
- 				'label' => esc_html__( 'Title', 'elementor-vpelements' ),
- 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
- 			]
- 		);
-
- 		$this->add_control(
- 			'vptitle1_color',
- 			[
- 				'label' => esc_html__( 'Start Text Color', 'elementor-vpelements' ),
- 				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
- 					'{{WRAPPER}} .vptitle1' => 'color: {{VALUE}};',
- 				],
- 			]
-		);
-		$this->add_control(
-			'vptitle2_color',
-			[
-				'label' => esc_html__( 'Middle Text Color', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#C0392B',
- 				'selectors' => [
-					'{{WRAPPER}} .vptitle2' => 'color: {{VALUE}};',
-				],
-			]
-	   );
-	   $this->add_control(
-			'vptitle3_color',
-			[
-				'label' => esc_html__( 'End Text Color', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .vptitle3' => 'color: {{VALUE}};',
-				],
-			]
-   		);
-
-		$this->add_control(
-			'font_family',
-			[
-				'label' => esc_html__( 'Font Family', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::FONT,
-				'default' => "'Open Sans', sans-serif",
-				'selectors' => [
-					'{{WRAPPER}} .vptitle' => 'font-family: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'font-size',
-			[
-				'label' => esc_html__( 'Middle Text Font Size', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 1,
-						'max' => 300,
-						'step' => 1,
-					]					
-				],
-				'selectors' => [
-					'{{WRAPPER}} .vptitle2' => 'font-size: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-
 		$this->add_control(
 			'tag_select',
 			[
@@ -242,9 +163,262 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);
+		$this->add_control(
+			'hr',
+			[
+				'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);
+		$this->add_control(
+			'start_icon',
+			[
+				'label' => esc_html__( 'Start Icon', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-star',
+					'library' => 'solid',
+				],
+			]
+		);
+		$this->add_control(
+			'end_icon',
+			[
+				'label' => esc_html__( 'End Icon', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-star',
+					'library' => 'solid',
+				],
+			]
+		);
+		
  		$this->end_controls_section();
 
- 		// Style Tab End
+ 		// Content Tab End
+
+
+ 		// Style Tab Start
+
+		$this->start_controls_section(
+			'section_general_style',
+			[
+				'label' => esc_html__( 'General Settings', 'elementor-vpelements' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+			$this->add_control(
+				'font_family',
+				[
+					'label' => esc_html__( 'Font Family', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::FONT,
+					'default' => "'Open Sans', sans-serif",
+					'selectors' => [
+						'{{WRAPPER}} .vptitle' => 'font-family: {{VALUE}}',
+					],
+				]
+			);
+			$this->add_control(
+				'text_align',
+				[
+					'label' => esc_html__( 'Alignment', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::CHOOSE,
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'elementor-vpelements' ),
+							'icon' => 'eicon-text-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'elementor-vpelements' ),
+							'icon' => 'eicon-text-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'elementor-vpelements' ),
+							'icon' => 'eicon-text-align-right',
+						],
+					],
+					'default' => 'center',
+					'toggle' => true,
+				]
+			);
+			$this->add_control(
+				'icon_color',
+				[
+					'label' => esc_html__( 'Icon Color', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'default' => '#F1C40F',
+					'selectors' => [
+						'{{WRAPPER}} .my-icon-wrapper' => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_control(
+				'icon_size',
+				[
+					'label' => esc_html__( 'Icon Size', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => [ 'px', '%','em', 'rem' ],
+					'default' => [
+						'size' => 40,
+						'unit' => 'px',
+					],
+					'range' => [
+						'px' => [
+							'min' => 1,
+							'max' => 300,
+							'step' => 1,
+						]					
+					],
+					'selectors' => [
+						'{{WRAPPER}} .my-icon-wrapper' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_group_control(
+				\Elementor\Group_Control_Border::get_type(),
+				[
+					'name' => 'border',
+					'label' => esc_html__( 'Border', 'elementor-vpelements' ),
+					'selector' => '{{WRAPPER}} .vptitle',
+				]
+			);
+			$this->add_group_control(
+				\Elementor\Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => 'box_shadow',
+					'label' => esc_html__( 'Box Shadow', 'elementor-vpelements' ),
+					'selector' => '{{WRAPPER}} .vptitle',
+				]
+			);
+			$this->add_group_control(
+				\Elementor\Group_Control_Background::get_type(),
+				[
+					'name' => 'background',
+					'label' => esc_html__( 'Background', 'elementor-vpelements' ),
+					'types' => [ 'classic', 'gradient', 'video' ],
+					'selector' => '{{WRAPPER}} .vptitle',
+				]
+			);
+			
+		$this->end_controls_section();
+
+
+ 		$this->start_controls_section(
+ 			'section_start_style',
+ 			[
+ 				'label' => esc_html__( 'Start Text', 'elementor-vpelements' ),
+ 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+ 			]
+ 		);
+
+			$this->add_control(
+				'vptitle1_color',
+				[
+					'label' => esc_html__( 'Start Text Color', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .vptitle1' => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_control(
+				'startfont-size',
+				[
+					'label' => esc_html__( 'Start Text Font Size', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => [ 'px', '%', 'em', 'rem' ],
+					'range' => [
+						'px' => [
+							'min' => 1,
+							'max' => 300,
+							'step' => 1,
+						]					
+					],
+					'selectors' => [
+						'{{WRAPPER}} .vptitle1' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_middle_style',
+			[
+				'label' => esc_html__( 'Middle Text', 'elementor-vpelements' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+			$this->add_control(
+				'vptitle2_color',
+				[
+					'label' => esc_html__( 'Middle Text Color', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'default' => '#C0392B',
+					'selectors' => [
+						'{{WRAPPER}} .vptitle2' => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_control(
+				'middlefont-size',
+				[
+					'label' => esc_html__( 'Middle Text Font Size', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => [ 'px', '%', 'em', 'rem' ],
+					'range' => [
+						'px' => [
+							'min' => 1,
+							'max' => 300,
+							'step' => 1,
+						]					
+					],
+					'selectors' => [
+						'{{WRAPPER}} .vptitle2' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+
+		$this->end_controls_section();
+		
+		$this->start_controls_section(
+			'section_end_style',
+			[
+				'label' => esc_html__( 'End Text', 'elementor-vpelements' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+			$this->add_control(
+				'vptitle3_color',
+				[
+					'label' => esc_html__( 'End Text Color', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .vptitle3' => 'color: {{VALUE}};',
+					],
+				]
+			);
+			$this->add_control(
+				'endfont-size',
+				[
+					'label' => esc_html__( 'End Text Font Size', 'elementor-vpelements' ),
+					'type' => \Elementor\Controls_Manager::SLIDER,
+					'size_units' => [ 'px', '%', 'em', 'rem' ],
+					'range' => [
+						'px' => [
+							'min' => 1,
+							'max' => 300,
+							'step' => 1,
+						]					
+					],
+					'selectors' => [
+						'{{WRAPPER}} .vptitle3' => 'font-size: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+		$this->end_controls_section();
+
+		// Style Tab End
 
  	}
 
@@ -252,10 +426,12 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  		$settings = $this->get_settings_for_display();
  		?>
 
- 		<<?php echo $settings['tag_select'];?> class="vptitle"> 
+ 		<<?php echo $settings['tag_select'];?> class="vptitle" style="text-align: <?php echo esc_attr( $settings['text_align'] ); ?>;"> 
+		 	<span class ="my-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['start_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
 			<span class ="vptitle1"><?php echo $settings['vptitle1'] ?> </span>
 			<span class ="vptitle2"><?php echo $settings['vptitle2'] ?> </span>
 			<span class ="vptitle3"><?php echo $settings['vptitle3'] ?> </span>
+			<span class ="my-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['end_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
  		</<?php echo $settings['tag_select'];?>>
  		<?php
  	}	

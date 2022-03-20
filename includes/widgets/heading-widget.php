@@ -117,6 +117,9 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  				'type' => \Elementor\Controls_Manager::TEXT,
  				'default' => esc_html__( 'Start ', 'elementor-vpelements' ),
 				'placeholder' => esc_html__( 'Type your title here', 'elementor-vpelements' ),
+				'dynamic' => [
+					'active' => true,
+				],
  			]
  		);
 		$this->add_control(
@@ -126,6 +129,9 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => esc_html__( 'Middle ', 'elementor-vpelements' ),
 			    'placeholder' => esc_html__( 'Type your title here', 'elementor-vpelements' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 		$this->add_control(
@@ -135,6 +141,9 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => esc_html__( 'End ', 'elementor-vpelements' ),
 			    'placeholder' => esc_html__( 'Type your title here', 'elementor-vpelements' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

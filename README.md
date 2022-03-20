@@ -37,11 +37,8 @@
 Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-=== Installation ===
-1. In your admin panel, go to Appearance > Themes and click the 'Add New' button.
-2. Click 'Upload plugin' and upload the zipped file
-3. Click on the 'Activate' button to use your new theme right away.
-4. Navigate to Elementor and start building your site.
+
+Write about 1-2 paragraphs describing the purpose of your project.
 
 See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
@@ -55,9 +52,10 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+1. In your admin panel, go to Appearance > Themes and click the 'Add New' button.
+2. Click 'Upload plugin' and upload the zipped file
+3. Click on the 'Activate' button to use your new theme right away.
+4. Navigate to Elementor and start building your site.
 
 ```
 Give the example
@@ -68,8 +66,6 @@ And repeat
 ```
 until finished
 ```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 

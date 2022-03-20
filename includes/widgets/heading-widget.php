@@ -206,15 +206,11 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
-			$this->add_control(
-				'font_family',
+			$this->add_group_control(
+				\Elementor\Group_Control_Typography::get_type(),
 				[
-					'label' => esc_html__( 'Font Family', 'elementor-vpelements' ),
-					'type' => \Elementor\Controls_Manager::FONT,
-					'default' => "'Open Sans', sans-serif",
-					'selectors' => [
-						'{{WRAPPER}} .vptitle' => 'font-family: {{VALUE}}',
-					],
+					'name' => 'content_typography',
+					'selector' => '{{WRAPPER}} .vptitle',
 				]
 			);
 			$this->add_control(
@@ -309,7 +305,13 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
  			]
  		);
-
+			$this->add_group_control(
+				\Elementor\Group_Control_Typography::get_type(),
+				[
+					'name' => 'start_content_typography',
+					'selector' => '{{WRAPPER}} .vptitle1',
+				]
+			);
 			$this->add_control(
 				'vptitle1_color',
 				[
@@ -347,7 +349,13 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
-
+			$this->add_group_control(
+				\Elementor\Group_Control_Typography::get_type(),
+				[
+					'name' => 'mid_content_typography',
+					'selector' => '{{WRAPPER}} .vptitle2',
+				]
+			);
 			$this->add_control(
 				'vptitle2_color',
 				[
@@ -387,7 +395,13 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
-
+			$this->add_group_control(
+				\Elementor\Group_Control_Typography::get_type(),
+				[
+					'name' => 'end_content_typography',
+					'selector' => '{{WRAPPER}} .vptitle3',
+				]
+			);
 			$this->add_control(
 				'vptitle3_color',
 				[

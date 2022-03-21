@@ -137,7 +137,61 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);
+		$repeater->add_control(
+			'icon',
+			[
+				'label' => esc_html__( 'Icon', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default' => [
+					'value' => 'fas fa-star',
+					'library' => 'solid',
+				],
+			]
+		);
+		$repeater->add_control(
+			'icon_color',
+			[
+				'label' => esc_html__( 'Icon Color', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#F1C40F',
+				
+			]
+		);
 
+		$repeater->add_control(
+			'vplist_icon_size',
+			[
+				'label' => esc_html__( 'Icon Size', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%','em', 'rem' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 300,
+						'step' => 1,
+					]					
+				],
+			]
+		);
+		$repeater->add_control(
+			'vplist_icon_spacing',
+			[
+				'label' => esc_html__( 'Icon Spacing', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%','em', 'rem' ],
+				'default' => [
+					'size' => 5,
+					'unit' => 'px',
+				],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 300,
+						'step' => 1,
+					]					
+				],
+			]
+		);
 		/* End repeater */
 
 		$this->add_control(
@@ -150,14 +204,27 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 					[
 						'text' => esc_html__( 'List Item #1', 'elementor-vpelements' ),
 						'link' => '',
+						'icon' => 'fas fa-star',
+						'icon_color' => '#F1C40F',
+						'vplist_icon_size' =>'',
+						'vplist_icon_space' =>'',
+
 					],
 					[
 						'text' => esc_html__( 'List Item #2', 'elementor-vpelements' ),
 						'link' => '',
+						'icon' => 'fas fa-star',
+						'icon_color' => '#F1C40F',
+						'vplist_icon_size' =>'',
+						'vplist_icon_space' =>'',
 					],
 					[
 						'text' => esc_html__( 'List Item #3', 'elementor-vpelements' ),
 						'link' => '',
+						'icon' => 'fas fa-star',
+						'icon_color' => '#F1C40F',
+						'vplist_icon_size' =>'',
+						'vplist_icon_space' =>'',
 					],
 				],
 				'title_field' => '{{{ text }}}',
@@ -166,56 +233,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 
 		$this->end_controls_section();
 
-		$this->start_controls_section(
-			'marker_section',
-			[
-				'label' => esc_html__( 'List Marker', 'elementor-vpelements' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
-
-		$this->add_control(
-			'marker_type',
-			[
-				'label' => esc_html__( 'Marker Type', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'options' => [
-					'ordered' => [
-						'title' => esc_html__( 'Ordered List', 'elementor-vpelements' ),
-						'icon' => 'eicon-editor-list-ol',
-					],
-					'unordered' => [
-						'title' => esc_html__( 'Unordered List', 'elementor-vpelements' ),
-						'icon' => 'eicon-editor-list-ul',
-					],
-					'other' => [
-						'title' => esc_html__( 'Custom List', 'elementor-vpelements' ),
-						'icon' => 'eicon-edit',
-					],
-				],
-				'default' => 'ordered',
-				'toggle' => false,
-			]
-		);
-
-		$this->add_control(
-			'marker_content',
-			[
-				'label' => esc_html__( 'Custom Marker', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter custom marker', 'elementor-vpelements' ),
-				'default' => '🧡',
-				'condition' => [
-					'marker_type[value]' => 'other',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementor-list-widget-text::marker' => 'content: "{{VALUE}}";',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-
+		
 		$this->start_controls_section(
 			'style_content_section',
 			[
@@ -252,60 +270,30 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'style_marker_section',
-			[
-				'label' => esc_html__( 'Marker Style', 'elementor-vpelements' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
 		$this->add_control(
-			'marker_color',
+			'icon_size',
 			[
-				'label' => esc_html__( 'Color', 'elementor-vpelements' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementor-list-widget-text::marker' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'marker_spacing',
-			[
-				'label' => esc_html__( 'Spacing', 'elementor-vpelements' ),
+				'label' => esc_html__( 'Icon Size', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', 'rem' ],
+				'size_units' => [ 'px', '%','em', 'rem' ],
+				'default' => [
+					'size' => 25,
+					'unit' => 'px',
+				],
 				'range' => [
 					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-					'em' => [
-						'min' => 0,
-						'max' => 10,
-					],
-					'rem' => [
-						'min' => 0,
-						'max' => 10,
-					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 40,
+						'min' => 1,
+						'max' => 300,
+						'step' => 1,
+					]					
 				],
 				'selectors' => [
-					// '{{WRAPPER}} .elementor-vpelements' => 'padding-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-vpelements' => 'padding-inline-start: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .vplist-icon-wrapper' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -318,37 +306,43 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$html_tag = [
-			'ordered' => 'ol',
-			'unordered' => 'ul',
-			'other' => 'ul',
-		];
-		$this->add_render_attribute( 'vplist', 'class', 'elementor-vpelements' );
+		$this->add_render_attribute( 'vplist', 'class', 'vplist-widget' );
 		?>
-		<<?php echo $html_tag[ $settings['marker_type'] ]; ?> <?php $this->print_render_attribute_string( 'list' ); ?>>
+		<div <?php $this->print_render_attribute_string( 'vplist' ); ?>>
 			<?php
 			foreach ( $settings['list_items'] as $index => $item ) {
-				$repeater_setting_key = $this->get_repeater_setting_key( 'text', 'list_items', $index );
-				$this->add_render_attribute( $repeater_setting_key, 'class', 'elementor-list-widget-text' );
-				$this->add_inline_editing_attributes( $repeater_setting_key );
 				?>
-				<li <?php $this->print_render_attribute_string( $repeater_setting_key ); ?>>
+				<div class="vplist-widget-item">
 					<?php
-					$title = $settings['list_items'][$index]['text'];
-
-					if ( ! empty( $item['link']['url'] ) ) {
-						$this->add_link_attributes( "link_{$index}", $item['link'] );
-						$linked_title = sprintf( '<a %1$s>%2$s</a>', $this->get_render_attribute_string( "link_{$index}" ), $title );
-						echo $linked_title;
-					} else {
-						echo $title;
-					}
-					?>
-				</li>
+					if ( ! empty( $item['link']['url'] ) ) { ?>
+						<a href="<?php echo $settings['list_items'][$index]['link']['url']; ?>">
+							<span 
+								class="vplist-widget-icon vplist-icon-wrapper" 
+								style="color:<?php	echo $settings['list_items'][$index]['icon_color'];?>; 
+									font-size:<?php	echo $settings['list_items'][$index]['vplist_icon_size']['size'] . $settings['list_items'][$index]['vplist_icon_size']['unit'];?>;
+									padding-right:<?php	echo $settings['list_items'][$index]['vplist_icon_spacing']['size'] . $settings['list_items'][$index]['vplist_icon_spacing']['unit'];?>;
+									">
+								<?php \Elementor\Icons_Manager::render_icon( $settings['list_items'][$index]['icon'], [ 'aria-hidden' => 'true' ] ); ?> 
+							</span>
+							<span class="vplist-widget-text"><?php	echo $settings['list_items'][$index]['text']; ?></span>
+						</a>
+					<?php
+					} else { ?>
+							<span 
+								class="vplist-widget-icon vplist-icon-wrapper" 
+								style="color:<?php	echo $settings['list_items'][$index]['icon_color'];?>; 
+									font-size:<?php	echo $settings['list_items'][$index]['vplist_icon_size']['size'] . $settings['list_items'][$index]['vplist_icon_size']['unit'];?>;
+									padding-right:<?php	echo $settings['list_items'][$index]['vplist_icon_spacing']['size'] . $settings['list_items'][$index]['vplist_icon_spacing']['unit'];?>;
+									">
+								<?php \Elementor\Icons_Manager::render_icon( $settings['list_items'][$index]['icon'], [ 'aria-hidden' => 'true' ] ); ?> 
+							</span>
+						<span class="vplist-widget-text"><?php	echo $settings['list_items'][$index]['text']; ?></span> <?php
+					} ?>
+				</div>
 				<?php
 			}
 			?>
-		</<?php echo $html_tag[ $settings['marker_type'] ]; ?>>
+		</div>
 		<?php
 	}
 
@@ -361,35 +355,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function content_template() {
-		?>
-		<#
-		html_tag = {
-			'ordered': 'ol',
-			'unordered': 'ul',
-			'other': 'ul',
-		};
-		view.addRenderAttribute( 'list', 'class', 'elementor-vpelements' );
-		#>
-		<{{{ html_tag[ settings.marker_type ] }}} {{{ view.getRenderAttributeString( 'list' ) }}}>
-			<# _.each( settings.list_items, function( item, index ) {
-				var repeater_setting_key = view.getRepeaterSettingKey( 'text', 'list_items', index );
-				view.addRenderAttribute( repeater_setting_key, 'class', 'elementor-list-widget-text' );
-				view.addInlineEditingAttributes( repeater_setting_key );
-				#>
-				<li {{{ view.getRenderAttributeString( repeater_setting_key ) }}}>
-					<# var title = item.text; #>
-					<# if ( item.link ) { #>
-						<# view.addRenderAttribute( `link_${index}`, item.link ); #>
-						<a href="{{ item.link.url }}" {{{ view.getRenderAttributeString( `link_${index}` ) }}}>
-							{{{title}}}
-						</a>
-					<# } else { #>
-						{{{title}}}
-					<# } #>
-				</li>
-			<# } ); #>
-		</{{{ html_tag[ settings.marker_type ] }}}>
-		<?php
+		
 	}
 
 }

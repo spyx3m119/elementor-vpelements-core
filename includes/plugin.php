@@ -131,7 +131,7 @@ final class Plugin {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-vpelements' ),
-			'<strong>' . esc_html__( 'Elementor Test Addon', 'elementor-vpelements' ) . '</strong>',
+			'<strong>' . esc_html__( 'VPELements Elementor Addon', 'elementor-vpelements' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'elementor-vpelements' ) . '</strong>'
 		);
 
@@ -154,7 +154,7 @@ final class Plugin {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-vpelements' ),
-			'<strong>' . esc_html__( 'Elementor Test Addon', 'elementor-vpelements' ) . '</strong>',
+			'<strong>' . esc_html__( 'VPELements Elementor Addon', 'elementor-vpelements' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'elementor-vpelements' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);

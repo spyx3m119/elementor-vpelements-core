@@ -175,7 +175,7 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Start Icon', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
-					'value' => 'fas fa-star',
+					'value' => 'fas fa-hand-point-right',
 					'library' => 'solid',
 				],
 			]
@@ -186,7 +186,7 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'End Icon', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
-					'value' => 'fas fa-star',
+					'value' => 'fas fa-hand-point-left',
 					'library' => 'solid',
 				],
 			]
@@ -243,7 +243,7 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'default' => '#F1C40F',
 					'selectors' => [
-						'{{WRAPPER}} .my-icon-wrapper' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .vptitle-icon-wrapper' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -265,7 +265,7 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 						]					
 					],
 					'selectors' => [
-						'{{WRAPPER}} .my-icon-wrapper' => 'font-size: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .vptitle-icon-wrapper' => 'font-size: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -441,11 +441,11 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
  		?>
 
  		<<?php echo $settings['tag_select'];?> class="vptitle" style="text-align: <?php echo esc_attr( $settings['text_align'] ); ?>;"> 
-		 	<span class ="my-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['start_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
+		 	<span class ="vptitle-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['start_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
 			<span class ="vptitle1"><?php echo $settings['vptitle1'] ?> </span>
 			<span class ="vptitle2"><?php echo $settings['vptitle2'] ?> </span>
 			<span class ="vptitle3"><?php echo $settings['vptitle3'] ?> </span>
-			<span class ="my-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['end_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
+			<span class ="vptitle-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['end_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
  		</<?php echo $settings['tag_select'];?>>
  		<?php
  	}	

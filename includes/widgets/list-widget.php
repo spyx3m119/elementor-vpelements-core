@@ -118,7 +118,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Text', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'List Item', 'elementor-vpelements' ),
-				'default' => esc_html__( 'List Item', 'elementor-vpelements' ),
+				'default' => esc_html__( 'Add List Item', 'elementor-vpelements' ),
 				'label_block' => true,
 				'dynamic' => [
 					'active' => true,
@@ -138,7 +138,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			]
 		);
 		$repeater->add_control(
-			'icon',
+			'item_icon',
 			[
 				'label' => esc_html__( 'Icon', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
@@ -149,17 +149,15 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			]
 		);
 		$repeater->add_control(
-			'icon_color',
+			'item_icon_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'elementor-vpelements' ),
+				'label' => esc_html__( 'Change Icon Color', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#F1C40F',
-				
 			]
 		);
 
 		$repeater->add_control(
-			'vplist_icon_size',
+			'item_icon_size',
 			[
 				'label' => esc_html__( 'Icon Size', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
@@ -174,14 +172,12 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			]
 		);
 		$repeater->add_control(
-			'vplist_icon_spacing',
+			'item_icon_spacing',
 			[
 				'label' => esc_html__( 'Icon Spacing', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%','em', 'rem' ],
 				'default' => [
-					'size' => 5,
-					'unit' => 'px',
 				],
 				'range' => [
 					'px' => [
@@ -204,27 +200,14 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 					[
 						'text' => esc_html__( 'List Item #1', 'elementor-vpelements' ),
 						'link' => '',
-						'icon' => 'fas fa-star',
-						'icon_color' => '#F1C40F',
-						'vplist_icon_size' =>'',
-						'vplist_icon_space' =>'',
-
 					],
 					[
 						'text' => esc_html__( 'List Item #2', 'elementor-vpelements' ),
 						'link' => '',
-						'icon' => 'fas fa-star',
-						'icon_color' => '#F1C40F',
-						'vplist_icon_size' =>'',
-						'vplist_icon_space' =>'',
 					],
 					[
 						'text' => esc_html__( 'List Item #3', 'elementor-vpelements' ),
 						'link' => '',
-						'icon' => 'fas fa-star',
-						'icon_color' => '#F1C40F',
-						'vplist_icon_size' =>'',
-						'vplist_icon_space' =>'',
 					],
 				],
 				'title_field' => '{{{ text }}}',
@@ -243,13 +226,14 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'title_color',
+			'icon_color',
 			[
 				'label' => esc_html__( 'Color', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
+				'default' => '#F1C40F',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-list-widget-text' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-list-widget-text > a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .vplist-widget-item' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .vplist-widget-item > a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -258,7 +242,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'icon_typography',
-				'selector' => '{{WRAPPER}} .elementor-list-widget-text, {{WRAPPER}} .elementor-list-widget-text > a',
+				'selector' => '{{WRAPPER}} .vplist-widget-item, {{WRAPPER}} .vplist-widget-item > a',
 			]
 		);
 
@@ -266,7 +250,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Text_Shadow::get_type(),
 			[
 				'name' => 'text_shadow',
-				'selector' => '{{WRAPPER}} .elementor-list-widget-text',
+				'selector' => '{{WRAPPER}} .vplist-widget-item',
 			]
 		);
 
@@ -292,6 +276,42 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);
+		$this->add_control(
+			'icon_spacing',
+			[
+				'label' => esc_html__( 'Adjust Icon Spacing', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%','em', 'rem' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 300,
+						'step' => 1,
+					]					
+				],
+				'selectors' => [
+					'{{WRAPPER}} .vplist-widget-text' => 'margin-left: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_control(
+			'text_vertical_pos',
+			[
+				'label' => esc_html__( 'Adjust Text Vertical Position', 'elementor-vpelements' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%','em', 'rem' ],
+				'range' => [
+					'px' => [
+						'min' => -300,
+						'max' => 300,
+						'step' => 1,
+					]					
+				],
+				'selectors' => [
+					'{{WRAPPER}} .vplist-widget-text' => 'position:relative; top: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -311,34 +331,35 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 		<div <?php $this->print_render_attribute_string( 'vplist' ); ?>>
 			<?php
 			foreach ( $settings['list_items'] as $index => $item ) {
+
+				/**
+				 * Get itemlist values and assign them to variables
+				 */
+
+				 // For item
+				 $item_name = $settings['list_items'][$index]['text'];
+				 $item_link = $settings['list_items'][$index]['link']['url'];
+				 $item_text_vertical = $settings['list_items'][$index]['item_text_vertical'];
+				 
+				// For Icons
+				 $item_icon_color = $settings['list_items'][$index]['item_icon_color'];
+				 $item_icon_size =  $settings['list_items'][$index]['item_icon_size']['size'] .  $settings['list_items'][$index]['item_icon_size']['unit'];
+				 $item_icon_spacing = $settings['list_items'][$index]['item_icon_spacing']['size'] . $settings['list_items'][$index]['item_icon_spacing']['unit'];
+
 				?>
+
 				<div class="vplist-widget-item">
+					<?php 
+				if ($item_link){ ?>	<a href="<?php echo $item_link; ?>"> <?php } ?>
+					<span class="vplist-widget-icon vplist-icon-wrapper" style="color:<?php echo $item_icon_color;?>; font-size:<?php echo $item_icon_size; ?>; padding-right:<?php echo $item_icon_spacing; ?>;">
+						<?php \Elementor\Icons_Manager::render_icon( $settings['list_items'][$index]['item_icon'], [ 'aria-hidden' => 'true' ] ); ?> 
+					</span>
+					<span class="vplist-widget-text"><?php	echo $item_name ?></span>
 					<?php
-					if ( ! empty( $item['link']['url'] ) ) { ?>
-						<a href="<?php echo $settings['list_items'][$index]['link']['url']; ?>">
-							<span 
-								class="vplist-widget-icon vplist-icon-wrapper" 
-								style="color:<?php	echo $settings['list_items'][$index]['icon_color'];?>; 
-									font-size:<?php	echo $settings['list_items'][$index]['vplist_icon_size']['size'] . $settings['list_items'][$index]['vplist_icon_size']['unit'];?>;
-									padding-right:<?php	echo $settings['list_items'][$index]['vplist_icon_spacing']['size'] . $settings['list_items'][$index]['vplist_icon_spacing']['unit'];?>;
-									">
-								<?php \Elementor\Icons_Manager::render_icon( $settings['list_items'][$index]['icon'], [ 'aria-hidden' => 'true' ] ); ?> 
-							</span>
-							<span class="vplist-widget-text"><?php	echo $settings['list_items'][$index]['text']; ?></span>
-						</a>
-					<?php
-					} else { ?>
-							<span 
-								class="vplist-widget-icon vplist-icon-wrapper" 
-								style="color:<?php	echo $settings['list_items'][$index]['icon_color'];?>; 
-									font-size:<?php	echo $settings['list_items'][$index]['vplist_icon_size']['size'] . $settings['list_items'][$index]['vplist_icon_size']['unit'];?>;
-									padding-right:<?php	echo $settings['list_items'][$index]['vplist_icon_spacing']['size'] . $settings['list_items'][$index]['vplist_icon_spacing']['unit'];?>;
-									">
-								<?php \Elementor\Icons_Manager::render_icon( $settings['list_items'][$index]['icon'], [ 'aria-hidden' => 'true' ] ); ?> 
-							</span>
-						<span class="vplist-widget-text"><?php	echo $settings['list_items'][$index]['text']; ?></span> <?php
-					} ?>
+				if ($item_link){ ?>	</a> <?php } ?>
+
 				</div>
+				
 				<?php
 			}
 			?>

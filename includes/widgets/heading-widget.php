@@ -448,5 +448,8 @@ class Elementor_Heading_Widget extends \Elementor\Widget_Base {
 			<span class ="vptitle-icon-wrapper"><?php \Elementor\Icons_Manager::render_icon( $settings['end_icon'], [ 'aria-hidden' => 'true' ] ); ?> </span>
  		</<?php echo $settings['tag_select'];?>>
  		<?php
- 	}	
+ 	}
+	 protected function content_template(){
+		
+	 }	
  }

@@ -240,7 +240,7 @@ final class Plugin {
 	// 	$controls_manager->register( new \Elementor_List_Control() );
 	// 	$controls_manager->register( new \Elementor_Template_Control() );
 
-	// }
+	// }	
 
 }
 

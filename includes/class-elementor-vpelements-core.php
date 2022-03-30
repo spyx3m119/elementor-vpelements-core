@@ -216,3 +216,37 @@ class Elementor_Vpelements_Core {
 	}
 
 }
+
+/**
+ * Create an Elementor Widget Category to host our Widgets
+ */
+
+function add_elementor_widget_categories( $elements_manager ) {
+
+	$elements_manager->add_category(
+		'vpElements',
+		[
+			'title' => esc_html__( 'VPElements', 'elementor-vpelements' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+}
+
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
+
+/** 
+ * Initialize the plugin directory
+*/
+
+function run_widget_plugin() {
+
+	// Load plugin file
+	require_once( __DIR__ . '/plugin.php' );
+
+	// Run the plugin
+	\Elementor_VPElements\Plugin::instance();
+
+}
+
+add_action( 'plugins_loaded', 'run_widget_plugin' );
+

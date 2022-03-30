@@ -188,6 +188,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 				],
 			]
 		);
+		
 		/* End repeater */
 
 		$this->add_control(
@@ -210,7 +211,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 						'link' => '',
 					],
 				],
-				'title_field' => '{{{ text }}}',
+				'title_field' => '{{{ elementor.helpers.renderIcon( this, item_icon, {}, "i", "panel" ) || \'<i class="{{ icon }}" aria-hidden="true"></i>\' }}} {{{ text }}}',
 			]
 		);
 
@@ -230,7 +231,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => esc_html__( 'Color', 'elementor-vpelements' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
-				'default' => '#F1C40F',
+				'default' => '#000000',
 				'selectors' => [
 					'{{WRAPPER}} .vplist-widget-item' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .vplist-widget-item > a' => 'color: {{VALUE}};',
@@ -340,6 +341,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 				 $item_name = $settings['list_items'][$index]['text'];
 				 $item_link = $settings['list_items'][$index]['link']['url'];
 				 $item_text_vertical = $settings['list_items'][$index]['item_text_vertical'];
+				 $item_text_vertical_pos = $settings['list_items'][$index]['item_text_vertical_pos']['size'] .  $settings['list_items'][$index]['item_text_vertical_pos']['unit'];
 				 
 				// For Icons
 				 $item_icon_color = $settings['list_items'][$index]['item_icon_color'];
@@ -354,7 +356,7 @@ class Elementor_List_Widget extends \Elementor\Widget_Base {
 					<span class="vplist-widget-icon vplist-icon-wrapper" style="color:<?php echo $item_icon_color;?>; font-size:<?php echo $item_icon_size; ?>; padding-right:<?php echo $item_icon_spacing; ?>;">
 						<?php \Elementor\Icons_Manager::render_icon( $settings['list_items'][$index]['item_icon'], [ 'aria-hidden' => 'true' ] ); ?> 
 					</span>
-					<span class="vplist-widget-text"><?php	echo $item_name ?></span>
+					<span class="vplist-widget-text"><?php echo $item_name ?></span>
 					<?php
 				if ($item_link){ ?>	</a> <?php } ?>
 
